@@ -1,0 +1,31 @@
+|| Compile with
+
+- make
+- run ./tool
+- make clean
+
+Functions to implement :-
+
+Select particular columns for output   || Done
+
+Operation on 2 columns to make a new column
+  a) Addition   || Done
+  b) Subtraction  || Done
+  c) Division      || Done
+  d) Multiplication || Done
+
+Stats on a column :-
+  a) min      ||Done
+  b) max      ||Done
+  c) median   ||Done
+  d) average  ||Done
+
+Work on Implementing sort || Done
+
+Type of joins:-
+  a) outer join || Done
+  b) inner join || Done
+
+Object Oriented Design - See Performance and Overheads|| Done
+
+Makefile || Done

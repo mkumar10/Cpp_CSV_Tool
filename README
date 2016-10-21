@@ -1,0 +1,32 @@
+To build the project we use a Makefile:-
+
+1) make  - used for building the file
+2) ./tool - is used for running the tool
+3) make clean - used for clearing all object files with the tool executable
+
+Project Description:-
+
+The tool was built to read,manipulate and write CSV files using the terminal. The Design of the project is as such that each
+column represents an object of the class CSVCOL for simplicity as well as performance constraints as if a file is 100K rows x 10 columns,
+it makes sense to have 10 vectors of size 100K each compared to 100K vectors of size 10 each. Also printing stats of a column is easier in this scenario.
+Then each file is represented by an object of CSVTOOL and can be manipulated through the command line. I saved all data in the form of strings, as in case
+some CSV files might have string columns and can be used for inner and outer join initially.
+
+Certain Assumptions:-
+
+1) C++14 exists on the machine it will be run on
+2) CSV files don't have headers and columns of data only
+3) I assume each CSV has only a single delimiter of a comma(,) and not any other one.
+4) In the case for inner and outer join all the values in a column are unique. Joins happen on numerical data to keep the new file sorted. Need to change 5 lines to remove this constraint if we don't need the new file to be sorted.
+5) For outer join I do a Full Outer Join and if some values exist in one table and not in the other they are written as NULL in the resulting dataset.
+6) I also assume for some cases it's a valid input for simplicity. (Like for column number and file_name is available in the same folder)
+7) Stats of a column are always called on numerical data.
+8) Same file can be read how many ever number of times.
+
+I have tried to keep the interface as intuitive as possible with printing the file_status before every command and providing options for an input
+before taking any input.
+
+For testing you can use the files glass_data.txt (214 x 11) and ratings.csv(100,000 x 4) and chess_rook_king.txt(28056 x 4)
+
+For doing an outer join I have included glass_data_outer_join_test.txt without the first 10 records (204 x 11) and glass_data_outer_join_test2.txt
+without the last 10 records(204 x 11) for checking the outer join.
